@@ -185,7 +185,7 @@ body::before {
     align-items: center;
     justify-content: space-between;
     padding: 20px 40px; /* Replaced rigid height with natural padding */
-    margin: 40px;
+    margin: 60px 40px 40px 40px;
 }
 
 ul {
