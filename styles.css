@@ -1122,6 +1122,10 @@ footer h5 {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+        padding: 20px 20px 40px 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto
     }
 
     .navbar ul{
@@ -1147,6 +1151,130 @@ footer h5 {
         transform: none !important;    /* Kills JS movement */
         width: 100% !important;
         height: auto !important;
+        justify-content: flex-start;
+    }
+
+    /* 2. Reset the Cards so they are physical objects again */
+    .project {
+        position: relative !important; /* Puts them back on the 'desk' */
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;    /* Removes scale/rotate hacks */
+        margin: 0 !important;          /* Prevents unexpected offsets */   /* Tells them to keep their own size */
+    }
+
+    body{
+        pointer-events: all;
+    }
+
+}
+
+@media (min-width: 900px) {
+    
+    .projects h1 {
+    text-align: center;
+    font-size: 55px;
+    color: #6dff79;
+    margin-top: 100px !important;
+    text-shadow: #68ff6373 0 0 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+    h1{
+        margin-top: 130px;
+    }
+    .skill{
+        min-width: 500px
+    }
+    .navbar {
+        justify-content: center;
+        scale: 1;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .project, .project.enabled {
+        scale: 1;
+        min-height: 500px;
+        min-width: 500px;
+    }
+
+    .project p {
+        max-width: 100%;
+    }
+
+    .projectContainer {
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .carousel {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .viewport {
+        overflow-x: auto;
+    }
+
+    .viewport::-webkit-scrollbar {
+        height: 10px;
+        background-color: transparent; 
+    }
+
+    .viewport::-webkit-scrollbar-thumb {
+        background-color: #54ff6b; 
+        border-radius: 10px; 
+    }
+
+    .viewport::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2); 
+        border-radius: 10px;
+    }
+
+    .project{
+        max-width: 90%;
+    }
+
+        .navbar{
+        justify-content: center;
+        scale: 1;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px 20px 40px 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .navbar ul{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .specialLink{
+        display: flex;
+    }
+
+    .social-icons{
+        display: flex;
+        z-index: 10;
+    }
+
+    #track.projectContainer {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 50px !important;
+        position: relative !important; /* Forces it to respect flow */
+        transform: none !important;    /* Kills JS movement */
+        width: 100% !important;
+        height: auto !important;
+        justify-content: flex-start;
     }
 
     /* 2. Reset the Cards so they are physical objects again */
@@ -1156,7 +1284,7 @@ footer h5 {
         left: auto !important;
         transform: none !important;    /* Removes scale/rotate hacks */
         margin: 0 !important;          /* Prevents unexpected offsets */
-        flex: 0 0 auto !important;     /* Tells them to keep their own size */
+        min-width: 600px !important;     /* Tells them to keep their own size */
     }
 
     body{
@@ -1169,8 +1297,10 @@ footer h5 {
 @media (min-width: 1024px) {
     .navbar {
         justify-content: center;
-        scale: 1;
-        max-width: 100%;
+        padding: 20px 20px 40px 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto
     }
     .navbar ul{
         width: 100%;
@@ -1223,6 +1353,10 @@ footer h5 {
 @media (min-width: 1200px) {
     .navbar {
         justify-content: center;
+        padding: 20px 20px 40px 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto
     }
 
     .arrow {
@@ -1272,7 +1406,12 @@ footer h5 {
 @media (min-width: 1600px) {
     .navbar {
         justify-content: center;
+        padding: 20px 20px 40px 20px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
     }
+
 
     .arrow {
         display: none;
@@ -1300,6 +1439,8 @@ footer h5 {
     .viewport {
         overflow-x: auto;
     }
+
+
 }
 
 /* Ultra Wide Desktop */
