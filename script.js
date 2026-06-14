@@ -8,27 +8,45 @@ const viewport = document.querySelector(".viewport");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-let index = 3;
+let index = 1;
 let allow = true;
 
 function update() {
+    // If the screen is 1900px or smaller, do absolutely nothing
+if (window.innerWidth <= 1900) {
+    // 1. Reset the track layout back to pure CSS defaults
+    track.style.transform = "";
+    track.style.transition = "";
+
+    // 2. Enable all the projects for standard grid/flex layout
+    const allProjects = document.querySelectorAll('.project');
+    allProjects.forEach(project => {
+        project.classList.add('enabled');
+    });
+    
+    return; 
+}
+
+    // Full JS carousel logic only kicks in above 1900px
     items.forEach(item => item.classList.remove("enabled"));
 
     const active = items[index];
-    if (!active) return;
+    if (!active) {
+        console.warn(`[Carousel Debug] No active item found at index: ${index}`);
+        return;
+    }
+
     active.classList.add("enabled");
 
-    // Get stable structural geometry sizes
+    const activeLeft = active.offsetLeft; 
+    const itemWidth = active.offsetWidth;
     const viewportWidth = viewport.offsetWidth;
-    const activeWidth = active.offsetWidth;
-    
-    // Find the relative distance of the active item from the start of the track
-    const activeLeftInTrack = active.offsetLeft;
 
-    // MATH: Find the exact pixel point where the item sits dead center in the viewport
-    const offset = (viewportWidth / 2) - (activeLeftInTrack + activeWidth / 2);
+    const viewportCenter = viewportWidth / 2;
+    const activeCenter = activeLeft + (itemWidth / 2);
 
-    // Apply the transition smoothly without zeroing out the track first
+    const offset = viewportCenter - activeCenter;
+
     track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
     track.style.transform = `translateX(${offset}px)`;
 }
