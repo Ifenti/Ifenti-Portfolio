@@ -153,18 +153,13 @@ body {
     
     /* 1. The Gradient */
     background: linear-gradient(45deg, #000, #012400); 
-
     background-repeat: no-repeat;  
-
     background-size: cover;        
-
     background-attachment: fixed;  
 }
 
-
 body::before {
     content: ""; 
-
     position: fixed;
     top: 0;
     left: 0;
@@ -180,47 +175,52 @@ body::before {
     opacity: 0.1;
 }
 
-.navbar{
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
     max-width: 100%;
     display: flex;
     flex-direction: row;
-    max-height: 10vw;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px; /* Replaced rigid height with natural padding */
+    margin: 40px;
 }
 
-
-
-ul{
+ul {
     max-width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     text-decoration: none;
-    gap: 50px;
+    gap: 40px;
     list-style: none;
     font-weight: bold;
-    font-size: 30px;
-    margin: 60px;
+    font-size: 26px; /* Scaled down slightly to fit cleanly */
+    margin: 0; /* Removed the massive 60px margin causing it to hang low */
 }
 
-ul a{
+ul a {
     color: rgb(136, 255, 136);
 }
-ul a:hover{
+
+ul a:hover {
     text-decoration: underline;
     text-underline-offset: 10px;
 }
 
-
-ul li:hover{
+ul li:hover {
     transform: scale(1.1);
     text-shadow: #68ff6373 0 0 20px;
 }
 
-ul li{
+ul li {
     transition: all 0.3s ease-in-out;
     text-shadow: #68ff6373 0 0 20px;
 }
 
-.active{
+.active {
     background: linear-gradient(90deg, #64ff55, #7eff89);
     transform: scale(1.1);
     color: rgb(0, 58, 14);
@@ -229,16 +229,27 @@ ul li{
     box-shadow: #68ff6373 0 0 20px;
     text-decoration: none !important;
 }
-.title{
+
+/* Mobile Navbar Icon (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    font-size: 35px;
+    color: rgb(136, 255, 136);
+    cursor: pointer;
+    text-shadow: #68ff6373 0 0 20px;
+}
+
+/* =========================
+   HERO / TITLES
+========================= */
+.title {
     margin-top: 10vh;
     max-width: 100vw;
     max-height: 90vh;
     justify-content: center;
-    
-
 }   
 
-.headTitle{
+.headTitle {
     text-align: center;
     font-size: 50px;
     font-weight: bold;
@@ -247,7 +258,7 @@ ul li{
     padding-bottom: 0px;
 }
 
-.specialTitle{
+.specialTitle {
     margin-top: 5px;
     font-size: 90px;
     text-align: center;
@@ -256,7 +267,7 @@ ul li{
     color: rgb(109, 255, 109);
 }
 
-.subtitle{
+.subtitle {
     text-align: center;
     font-size: 35px;
     color: rgb(178, 255, 182);
@@ -264,6 +275,10 @@ ul li{
     display: flex;
     justify-content: center;
     align-items: baseline;
+    margin-top: 10px;
+        max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .changeText-wrapper {
@@ -274,7 +289,7 @@ ul li{
     width: fit-content;
 }
 
-.changeText{
+.changeText {
     color: rgb(77, 255, 107);
     display: inline-block;
     font-size: 35px;
@@ -285,29 +300,28 @@ ul li{
 
 @keyframes changeText{
     0%{
-                color: rgb(77, 255, 107);
+        color: rgb(77, 255, 107);
         transform: translateY(0px);
-            text-shadow: #a8ffa779 0 0 20px;
+        text-shadow: #a8ffa779 0 0 20px;
     }
     30%{
-                color: #00000000;
+        color: #00000000;
         transform: translateY(-20px);
-            text-shadow: #00000000 0 0 00px;
-        
+        text-shadow: #00000000 0 0 00px;
     }
     70%{
         color: #00000000;
         transform: translateY(20px);
-            text-shadow: #00000000 0 0 0px;
+        text-shadow: #00000000 0 0 0px;
     }
     100%{
         color: rgb(77, 255, 107);
         transform: translateY(0px);
-            text-shadow: #a8ffa779 0 0 20px;
+        text-shadow: #a8ffa779 0 0 20px;
     }
-
 }
-.heroP{
+
+.heroP {
     text-align: center;
     font-size: 30px;
     margin-top: 30px;
@@ -317,28 +331,26 @@ ul li{
     color: rgb(158, 255, 174);
 }
 
-.social-icons{
+.social-icons {
     justify-content: center;
     display: flex;
     margin-top: 40px;
+    margin-bottom: 40px;
     gap: 25px;
 }
+
+
+
 .social-icons i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: 50px;
     height: 50px; 
-
- 
     color: rgb(112, 255, 124);
     border: 3px solid rgb(121, 255, 128); 
-
     transition: all 0.3s ease;
     border-radius: 50%;
-
-
 }
 
 .social-icons i:hover {
@@ -347,12 +359,17 @@ ul li{
     cursor: pointer;
     transform: scale(1.2);
     box-shadow: #68ff6373 0 0 20px;
-
 }
 
+/* =========================
+   PROJECTS & CAROUSEL
+========================= */
 .projects {
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    scroll-margin-top: 80px; 
 }
 
 h1 {
@@ -366,14 +383,7 @@ h1 {
     margin-right: auto;
 }
 
-.subtitle {
-    text-align: center;
-    font-size: 30px;
-    color: #a9ffb0;
-    margin-top: 10px;
-}
-
-.header{
+.header {
     height: 100vh;
 }
 
@@ -387,73 +397,110 @@ h1 {
     width: 100%;
 }
 
-
-/* =========================
-   CAROUSEL VIEWPORT (CLIP BOX)
-========================= */
 .carousel {
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
-    
-    /* 1. REMOVE the horizontal padding */
     padding-bottom: 40px; 
-    
-    /* 2. CHANGE this so items start at the left edge */
     justify-content: flex-start; 
 }
 
-
-/* =========================
-   TRACK (MOVES LEFT/RIGHT)
-========================= */
 .projectContainer {
     display: flex;
     flex-direction: row;
     gap: 90px;
     justify-content: center;
     margin-top: 55px;
-
     transition: transform 0.6s ease;
     will-change: transform;
     align-items: center;
     justify-content: flex-start;
 }
 
-
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 .project {
-
     background-color: #0038076c;
     border-radius: 20px;
     backdrop-filter: blur(3px);
     box-shadow: #0038079d 0 0 30px;
-
     display: flex;
     flex-direction: column;
-
     transition: transform 0.4s ease;
-
-}
-
-.project {
     opacity: 0.5;
     transform: scale(0.9);
     filter: blur(2px);
     transform-origin: center;
+    border: 3px solid rgba(139, 255, 154, 0.247);
+    min-width: calc(90% / 3);
+    flex: calc(80% / 3);
+    pointer-events: none;
+    justify-content: center;
 }
 
 .project.enabled {
-    transform: scale(1.15);
+    transform: scale(1.1);
     opacity: 1;
     z-index: 10;
     filter: blur(0px);
+    pointer-events: all;
+    border: 3px solid rgba(139, 255, 155, 0.822);
+    box-shadow: #00610dcb 0 0 30px;
 }
 
+.project h2 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #6dff79;
+    text-shadow: #68ff6373 0 0 20px;
+}
 
+.project h3 {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #c2ffc7;
+    text-shadow: #68ff6373 0 0 10px;
+}
+
+.project p {
+    padding: 30px 50px 30px 50px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 500;
+    color: #c2ffc7;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.learn {
+    display: inline-block; 
+    width: 190px;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 50px; 
+    font-weight: bold;
+    background: linear-gradient(-135deg, #7cff7c, #64ff55);
+    color: #035000;
+    transition: all 0.3s ease-in-out;
+}
+
+.learn:hover {
+    scale: 1.1;
+    box-shadow:#30ca2a73 0 0 20px;
+}
+
+/* ARROWS (Kept entirely intact) */
 .arrow {
     position: absolute;
     top: 0;
@@ -497,95 +544,6 @@ h1 {
     right: 0px;
 }
 
-.project {
-
-    transition: transform 0.4s ease;
-    border: 3px solid rgba(139, 255, 154, 0.247);
-}
-
-.project.enabled {
-    transform: scale(1.1);
-    pointer-events: all;
-    border: 3px solid rgba(139, 255, 155, 0.822);
-    box-shadow: #00610dcb 0 0 30px;
-}
-
-
-
-
-.project{
-    background-color: #0038076c;
-    min-width: calc(90% / 3);
-    flex: calc(80% / 3);
-    border-radius: 20px;
-    backdrop-filter: blur(3px);
-    box-shadow: #0038079d 0 0 30px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    pointer-events: none;
-    
-
-}
-
-
-.project h2{
-    text-align: center;
-    padding-top: 50px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #6dff79;
-    text-shadow: #68ff6373 0 0 20px;
-}
-
-.project h3{
-    text-align: center;
-    padding-top: 5px;
-    font-size: 27px;
-    font-weight: bold;
-    color: #c2ffc7;
-    text-shadow: #68ff6373 0 0 10px;
-}
-
-.project p {
-    padding: 30px 50px 30px 50px;
-    text-align: center;
-    font-size: 21px;
-    font-weight: 500;
-    color: #c2ffc7;
-    max-width: 90%;
-    padding: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.learn {
-    display: inline-block; 
-    
-    width: 190px;
-    height: 60px;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    
-    border-radius: 20px;
-    font-size: 25px;
-
-    text-align: center;
-    line-height: 50px; 
-    font-weight: bold;
-    background: linear-gradient(-135deg, #7cff7c, #64ff55);
-    color: #035000;
-    transition: all 0.3s ease-in-out;
-}
-
-.learn:hover{
-    scale: 1.1;
-    box-shadow:#30ca2a73 0 0 20px;
-}
-
 .viewport {
     overflow: hidden;
     padding-bottom: 40px;
@@ -593,34 +551,10 @@ h1 {
     justify-content: center;
 }
 
-.carousel {
-    position: relative;
-    overflow: hidden;
-}
 
-.projectContainer {
-    display: flex;
-    gap: 90px;
-    align-items: center;
-}
-
-.projects {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* vertical centre */
-    scroll-margin-top: 80px; /* prevents navbar overlap if you have one */
-}
-
-
-
-
-
-
-
-/*SKILLS DESIGN -------------------------*/
-
-
+/* =========================
+   SKILLS DESIGN
+========================= */
 .skills {
     min-height: 100vh;
     display: flex;
@@ -628,6 +562,11 @@ h1 {
     justify-content: center; 
     align-items: center;     
     scroll-margin-top: 80px; 
+}
+.skills h3{
+        max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .sub {
@@ -664,7 +603,7 @@ h1 {
     align-items: center;    
     justify-content: center; 
     background-color: #0038079d;
-    padding: 50px 30px; 
+    padding: 60px 40px; /* Added more internal padding as requested */
     gap: 20px;
     backdrop-filter: blur(3px);
     border-radius: 20px;
@@ -691,6 +630,7 @@ h1 {
     text-align: center;     
     text-shadow: #00ff22;
     transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    
 }
 
 .level {
@@ -705,6 +645,7 @@ h1 {
 .ranking {
     color: #ff8800;
     text-shadow: #ffa60063 0 0 20px;
+    display: block;
 }
 
 .rankingHigh {
@@ -722,8 +663,9 @@ h1 {
 }
 
 
-/*CONTACT*/
-
+/* =========================
+   CONTACT
+========================= */
 .contact-form {
     min-height: 100vh;
     display: flex;
@@ -739,8 +681,11 @@ h1 {
     color:#acffa4;
     margin-top: -20px;
     margin-bottom: 50px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
-/* wrapper */
+
 .contactWrapper {
     width: 100%;
     max-width: 900px;
@@ -749,7 +694,6 @@ h1 {
     gap: 25px;
 }
 
-/* header */
 .contactHeader {
     text-align: center;
     color: #d6ffe1;
@@ -763,7 +707,6 @@ h1 {
     opacity: 0.7;
 }
 
-/* form card */
 .formContainer {
     background: rgba(0, 102, 14, 0.25);
     backdrop-filter: blur(6px);
@@ -773,14 +716,12 @@ h1 {
     border: 3px solid #66ff60 ;
 }
 
-/* form layout */
 form {
     display: flex;
     flex-direction: column;
     gap: 18px;
 }
 
-/* label + input grouping */
 .inputGroup {
     display: flex;
     flex-direction: column;
@@ -794,7 +735,6 @@ label {
     font-weight: bold;
 }
 
-/* inputs */
 input, textarea {
     background: rgba(0, 0, 0, 0.25);
     border: 3px solid rgba(139, 255, 154, 0.397);
@@ -806,7 +746,6 @@ input, textarea {
     transition: 0.2s ease;
 }
 
-/* focus glow */
 input:focus, textarea:focus {
     border-color: #63ff70;
     box-shadow: 0 0 0 3px rgba(99, 255, 155, 0.15);
@@ -815,7 +754,7 @@ input:focus, textarea:focus {
 .itemLink{
     display: block;
 }
-/* button */
+
 .submit {
     margin-top: 10px;
     padding: 12px;
@@ -833,18 +772,14 @@ input:-webkit-autofill,
 textarea:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.15) inset !important;
     -webkit-text-fill-color: #ffffff !important;
-
     border: 3px solid rgba(139, 255, 154, 0.397) !important;
-
     transition: background-color 9999s ease-in-out 0s;
 }
 
-/* when autofilled + focused (MATCHES your focus style) */
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.25) inset,
                         0 0 0 3px rgba(99, 255, 155, 0.15) !important;
-
     border: 3px solid #63ff70 !important;
 }
 
@@ -853,7 +788,10 @@ textarea:-webkit-autofill:focus {
     box-shadow: 0 8px 20px rgba(0, 255, 120, 0.25);
 }
 
-/*FOOTER*/
+
+/* =========================
+   FOOTER
+========================= */
 footer {
     background: linear-gradient(135deg, rgba(0, 68, 11, 0.4), rgba(0, 50, 10, 0.2));
     backdrop-filter: blur(8px);
@@ -868,28 +806,27 @@ footer {
 
 .footerWrapper {
     width: 100%;
-    max-width: 1200px; /* Restricts max expansion on ultra-wide monitors */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .footerContent {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Spreads layout columns evenly */
-    align-items: flex-start; /* Keeps columns locked to top height */
+    justify-content: space-between; 
+    align-items: flex-start; 
     gap: 40px; 
-    flex-wrap: wrap; /* Automatically wraps nicely on smaller screens or tablets */
+    flex-wrap: wrap; 
 }
 
 .footerSection {
-    flex: 1; /* Assigns equal horizontal spatial widths to columns */
-    min-width: 220px; /* Prevents columns from getting squished too narrow */
+    flex: 1; 
+    min-width: 220px; 
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Fixed Inner Components styling */
 footer h3.title {
     text-align: center;
     color: #40ff5a;
@@ -898,6 +835,7 @@ footer h3.title {
     letter-spacing: -0.5px;
     margin-bottom: 40px;
     margin-top: 0;
+    max-width: 80%;
 }
 
 .skillList, .contactList, .social-icons2, .quickLinks {
@@ -926,12 +864,12 @@ footer p {
 .linkName {
     color: #00c853;
     font-weight: 600;
-    
 }
 
 .space{
     margin-top: 20px;
 }
+
 footer .alink {
     color: #8aff99;
     text-decoration: none;
@@ -977,7 +915,6 @@ footer a:hover::after {
     box-shadow: #16ff3563 0 0 20px;
 }
 
-
 .social-icons2 i {
     color: rgb(112, 255, 124);
     font-size: 18px;
@@ -997,7 +934,7 @@ footer h5 {
     15% { transform: scale(1); }
 }
 
-.line{
+.line {
     width: 100%;
     background-color: #87ff97;
     height: 2px;
@@ -1008,12 +945,303 @@ footer h5 {
     margin-top: 80px;
 }
 
-.line p{
-   color: #87ff97;
-   font-size: 0px;
+.line p {
+    color: #87ff97;
+    font-size: 0px;
 }
 
-.copyright{
+.copyright {
     padding-top: 20px;
     font-size: 20px;
+}
+
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+
+/* Mobile (Added to address Dropdown & Vertical Projects) */
+@media (max-width: 767px) {
+    .navbar {
+        position: relative; /* Anchor for absolute dropdown */
+        padding: 15px 25px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger button (add to HTML) */
+    }
+
+    ul {
+        display: none; /* Hide default inline menu */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 36, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        border-bottom: 2px solid #63ff70;
+        z-index: 1000;
+        text-align: center;
+        gap: 20px;
+    }
+
+    ul.show-menu {
+        display: flex; /* Toggle this class with JS when hamburger is clicked */
+    }
+
+    /* Turn horizontal project scroll to vertical stack */
+    .projectContainer {
+        flex-direction: column;
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .project, .project.enabled {
+        min-width: 90%; /* Let cards span the screen */
+        scale: 1; /* Reset scaling */
+        min-height: auto;
+        pointer-events: all;
+    }
+
+    .viewport, .carousel {
+        overflow-y: visible; /* Standard vertical page scroll takes over */
+        overflow-x: hidden;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .skill {
+        padding: 40px 20px; /* Reduced padding slightly on mobile to prevent squishing */
+    }
+
+        .skill{
+        min-width: 500px
+    }
+
+        .project{
+        max-width: 90%;
+    }
+
+    .social-icons{
+        margin-bottom: 100px;
+    }
+}
+
+
+/* Mobile -> Tablet */
+@media (min-width: 768px) {
+    
+    h1{
+        margin-top: 130px;
+    }
+    .skill{
+        min-width: 500px
+    }
+    .navbar {
+        justify-content: center;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .project, .project.enabled {
+        scale: 1;
+        min-height: 500px;
+        min-width: 500px;
+    }
+
+    .project p {
+        max-width: 100%;
+    }
+
+    .projectContainer {
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .carousel {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .viewport {
+        overflow-x: auto;
+    }
+
+    .viewport::-webkit-scrollbar {
+        height: 10px;
+        background-color: transparent; 
+    }
+
+    .viewport::-webkit-scrollbar-thumb {
+        background-color: #54ff6b; 
+        border-radius: 10px; 
+    }
+
+    .viewport::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2); 
+        border-radius: 10px;
+    }
+
+    .project{
+        max-width: 90%;
+    }
+}
+
+/* Tablet -> Small Laptop */
+@media (min-width: 1024px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .project, .project.enabled {
+        scale: 1;
+        min-height: 500px;
+        min-width: 500px;
+    }
+
+    .project p {
+        max-width: 100%;
+    }
+
+    .projectContainer {
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .carousel {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .viewport {
+        overflow-x: auto;
+    }
+
+    .viewport::-webkit-scrollbar {
+        height: 10px; 
+        background-color: transparent; 
+    }
+
+    .viewport::-webkit-scrollbar-thumb {
+        background-color: #54ff6b; 
+        border-radius: 10px; 
+    }
+
+    .viewport::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2); 
+        border-radius: 10px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1200px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .project, .project.enabled {
+        scale: 1;
+        min-height: 500px;
+    }
+
+    .project p {
+        max-width: 100%;
+    }
+
+    .projectContainer {
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .carousel {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .viewport {
+        overflow-x: auto;
+    }
+
+    .viewport::-webkit-scrollbar {
+        height: 10px; 
+        background-color: transparent; 
+    }
+
+    .viewport::-webkit-scrollbar-thumb {
+        background-color: #54ff6b; 
+        border-radius: 10px; 
+    }
+
+    .viewport::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2); 
+        border-radius: 10px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1600px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .project, .project.enabled {
+        scale: 1;
+        min-height: 500px;
+    }
+
+    .project p {
+        max-width: 100%;
+    }
+
+    .projectContainer {
+        gap: 150px;
+        justify-content: center;
+    }
+
+    .carousel {
+        justify-content: center;
+        overflow-x: auto;
+    }
+
+    .viewport {
+        overflow-x: auto;
+    }
+}
+
+/* Ultra Wide Desktop */
+@media (min-width: 1900px) {
+    .navbar {
+        justify-content: left;
+    }
+
+    .arrow {
+        display: flex;
+    }
+
+    .projectContainer {
+        gap: 90px;
+        justify-content: flex-start;
+    }
+
+    .viewport {
+        overflow-x: hidden;
+    }
 }
